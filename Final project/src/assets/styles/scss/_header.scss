@@ -1,0 +1,20 @@
+header {
+  padding: 10px 0;
+  background-color: #fff;
+  @extend .line;
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  .logo img {
+    width: 205px;
+    height: auto;
+  }
+  .center {
+    margin: 0 auto;
+    display: block;
+  }
+}

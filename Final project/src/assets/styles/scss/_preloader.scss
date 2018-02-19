@@ -1,0 +1,20 @@
+.preloader:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid $mgrey;
+  border-top-color: $dred;
+  animation: preloader .6s linear infinite;
+}
+
+@keyframes preloader {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,39 @@
+@media (max-width: 991px) {
+  .features {
+    padding: 54px 0;
+  }
+  .feature-item {
+    margin: 17px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  header.fixed {
+    .logo {
+      img {
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+  .hero-area-title {
+    font-size: 8vw;
+  }
+  .hero-area-tagline {
+    font-size: 2.2vw;
+  }
+  .details-container {
+    .btn-regular {
+      margin-top: 20px!important;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-area-title {
+    font-size: 44px;
+  }
+  .hero-area-tagline {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,30 @@
+<div class = "main-container">
+<div class="login-container">
+  <h1>Log In</h1>
+  <form id="loginForm"  action="" method="post" >
+
+    <table>
+      <tr>
+        <td>
+          <input [(ngModel)]="userName" type="text" name="username" class="username" placeholder="username" autocomplete="off" />
+        </td>
+      </tr>
+      <tr>
+        <td><input [(ngModel)]="password" type="password"  name="password" class="password" placeholder="password"  oncontextmenu="return false" onpaste="return false"/></td>
+      </tr>
+      <tr><td class = "red">{{warning}}</td></tr>
+      <tr>
+        <td><button type="submit" (click)="checkIfUserValid()" >submit</button></td>
+      </tr>
+      <tr><br>
+      <a routerLink="/row" >sign up</a>
+      </tr>
+     <tr>
+      <td><div id = "add"></div></td>
+     </tr>
+    </table>
+  </form>
+
+</div>
+
+</div>

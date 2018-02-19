@@ -1,0 +1,50 @@
+<table id="cartTable"  class="cart table table-condensed" >
+  <!-- head of cart -->
+  <thead>
+      <tr>
+          <th><label>products</label></th>
+          <th style="width:100px;"><label>Price</label></th>
+
+        <th style="width:40px;"><label>Operation</label></th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let item of cartItems" >
+        <td class="goods">
+            <label>{{item.product.name}}</label>
+        </td>
+        <td class="number small-bold-red"><span>{{item.product.price}}</span></td>
+      <td class="operation"><span class="delete btn btn-xs btn-primary" (click)="deleteproducts(item.product,item.quantity)">Delete</span></td>
+</tbody>
+</table>
+
+<div class="row">
+<div class="col-md-12 col-lg-12 col-sm-12">
+<div style="border-top:1px solid gray;padding:4px 10px;">
+  <div style="margin-left:20px;" class="pull-right total">
+    <label>The Total Amount:<span class="currency">￥</span><span id="priceTotal" class="large-bold-red">{{amount}}.00</span></label>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="row" >
+<div class="col-md-1 col-lg-1 col-sm-1">
+<input [(ngModel)]="code"/>
+</div>
+<div class="col-md-2 col-lg-2 col-sm-2">
+<div class="btn btn-xs btn-primary pull-right" style="margin-bottom:20px; margin-right:10px" (click)="checkIfUserValid()">Promo Code <i class="fa fa-credit-card" aria-hidden="true"></i></div>
+</div>
+<div  class="col-md-9 col-lg-9 col-sm-9" >
+<div class="btn btn-xs btn-primary pull-right" style="margin-bottom:20px; margin-right:10px" (click)="emptyCart()" routerLink="/order" >Buy <i class="fa fa-credit-card" aria-hidden="true"></i></div>
+</div>
+</div>
+
+<div class="row">
+<div  class="col-md-12 col-lg-12 col-sm-12">
+<div routerLink="/main" class="btn btn-xs btn-primary pull-right">Back to list <i class="fa fa-angle-double-right" aria-hidden="true"></i></div>
+</div>
+</div>
+
+
