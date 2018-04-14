@@ -1,0 +1,16 @@
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-02-07T085953.200.html
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-02-07T085832.200.html
+
+###
+
