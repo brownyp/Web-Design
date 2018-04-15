@@ -18,12 +18,20 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
 
 
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>test</web-resource-name>
-            <url-pattern>/views/*</url-pattern>
+            <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
 
         <auth-constraint>
@@ -45,8 +53,8 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/WEB-INF/views/login.jsp</form-login-page>
-            <form-error-page>/WEB-INF/views/error.jsp</form-error-page>
+            <form-login-page>/WEB-INF/admin/login.jsp</form-login-page>
+            <form-error-page>/WEB-INF/admin/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: yupei
@@ -8,21 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<h1>Welcome To Second Hand Market</h1>
-<a href="home">Home</a>
-<a href="productlist">Product List</a>
-<a href="Mycart">My Cart</a>
-<form action="/shoppingcart" method="post"><input type="submit" value="login"></form></td>
-
-<%--<a href="">Order List</a>--%>
-<%--<a href="">Creat Product</a>--%>
-
-
+<h1 class="welcome">Welcome To Second Hand Market</h1>
+<jsp:include page="/WEB-INF/else/header.jsp" />
+<jsp:include page="/WEB-INF/else/footer.jsp" />
+<a href="/getproduct">test</a>
 <body>
-<ul>
-    <li>Shopping website</li>
-</ul>
 </body>
 </html>

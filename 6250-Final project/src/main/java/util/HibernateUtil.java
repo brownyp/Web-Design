@@ -24,7 +24,7 @@ public class HibernateUtil {
 
     public static Session getSession()
     {
-        return sessionFactory.openSession();
+        return sessionFactory.getCurrentSession();
     }
     public static void closeSessionFactory()
     {
@@ -36,6 +36,5 @@ public class HibernateUtil {
         Transaction transaction=session.beginTransaction();
         session.save(t);
         transaction.commit();
-        session.close();
     }
 }

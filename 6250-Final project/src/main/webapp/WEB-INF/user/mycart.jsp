@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<a href="home">Home</a>
-<a href="productlist">Product List</a>
-<a href="Mycart">My Cart</a>
-<form action="/shoppingcart" method="post"><input type="submit" value="login"></form></td>
+<h1 class="welcome">Welcome To Second Hand Market</h1>
+<jsp:include page="/WEB-INF/else/header.jsp" />
 mycart
+<jsp:include page="/WEB-INF/else/footer.jsp" />
 </body>
 </html>

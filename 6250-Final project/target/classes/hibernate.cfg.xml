@@ -9,11 +9,12 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">88888888</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-
         <property name="hibernate.hbm2ddl.auto">update</property>
-
+        <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping resource="movie.cfg.xml" />
+        <mapping class="bean.OrderDetails"/>
+        <mapping class="bean.Products"/>
+        <mapping class="bean.Orders"/>
     </session-factory>
 </hibernate-configuration>

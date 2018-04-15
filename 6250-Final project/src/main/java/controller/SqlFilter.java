@@ -34,7 +34,7 @@ public class SqlFilter implements Filter {
         }
         System.out.println("被匹配字符串：" + sql);
         if (sqlValidate(sql)) {
-            res.sendRedirect("sqlerror.jsp");
+            res.sendRedirect("else/sqlerror.jsp");
         } else {
             chain.doFilter(req, res);
         }

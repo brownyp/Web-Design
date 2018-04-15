@@ -11,11 +11,6 @@
     <title>Login Page</title>
 </head>
 <h1>Welcome To Second Hand Market</h1>
-
-<%--<a href="">Order List</a>--%>
-<%--<a href="">Creat Product</a>--%>
-
-
 <body>
 <h2>Only Manager Can login</h2>
 <form name="loginform" method="post" action="j_security_check">
@@ -27,5 +22,6 @@
     <input type="submit" value="登 录" >
 
 </form>
+<a href="backtoUpage">back</a>
 </body>
 </html>
