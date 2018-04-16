@@ -28,7 +28,6 @@ public class ProductsDAO {
 
             Criteria crit = s.createCriteria(Products.class);
             List<Products> results = crit.list();
-            System.out.println(results.size());
             DAO.commit();
             DAO.close();
             return results;

@@ -12,10 +12,9 @@
     <title>Index</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<h1>Welcome To Second Hand Market</h1>
+<h1 class="welcome">Welcome To Second Hand Market</h1>
 <jsp:include page="/WEB-INF/else/header.jsp" />
 <jsp:include page="/WEB-INF/else/footer.jsp" />
-<a href="/getproduct">test</a>
 <body>
 </body>
 </html>

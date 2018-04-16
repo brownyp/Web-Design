@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>Welcome To Second Hand Market</h1>
+<h1 class="welcome">Welcome To Second Hand Market</h1>
 <jsp:include page="/WEB-INF/else/header.jsp" />
 mycart
 <jsp:include page="/WEB-INF/else/footer.jsp" />

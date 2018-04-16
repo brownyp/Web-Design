@@ -13,28 +13,33 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script>
+    <script type="text/javascript">
+        var input = [];
         function cal() {
             var test = 0;
+
             for(var k=0;k<5;k++)
             {
                 var inputNum = document.getElementById("amountInput"+k).value;
                 var priceNum = document.getElementById("price"+k).value;
+
                 test += inputNum*priceNum;
+                input[k]=inputNum;
             }
 
             document.getElementById("chargeTotal").value=test;
+            document.getElementById("chargeNum").value=test;
+            document.getElementById("chargeNum1").value=inputNum;
 
         }
+
     </script>
 </head>
 <body>
 <h1 class="welcome">Welcome To Second Hand Market</h1>
 <jsp:include page="/WEB-INF/else/header.jsp" />
-
-
-    <c:forEach var="i" begin="0" end="${product.size()-1}">
-
+<form action="/ordernow">
+<c:forEach var="i" begin="0" end="${product.size()-1}">
         <div class="product_container">
             <table class="product_table">
                 <tr>
@@ -53,7 +58,17 @@
         </div>
     </c:forEach>
 <br>
-Total charge:<input type="text" id="chargeTotal"><button name="cal" type="submit" onclick="cal()">Update</button>
+    <div class="totalcharge">
+        Total charge:<input name="chargeTotal" type="text" id="chargeTotal">
+        <input name="calname" type="button" value="update" onclick="cal()">
+    </div>
+    <input type="hidden" name="chargeNum" id="chargeNum" >
+    <input type="submit" id="ordernow1" value="Order Now">
+</form>
+
+
+
+<button id="test1" type="button" onclick="">aaaa</button>
 
 
 <jsp:include page="/WEB-INF/else/footer.jsp" />
