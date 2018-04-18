@@ -52,7 +52,7 @@
                     <td>Price:<input type="hidden" value="${product.get(i).price}" id="price${i}">${product.get(i).price}</td>
                 </tr>
                 <tr>
-                    <td>Amount: <input type="text" id="amountInput${i}"}></td>
+                    <td>Amount: <input type="text" name="amountInput${i}" id="amountInput${i}"}></td>
                 </tr>
             </table>
         </div>

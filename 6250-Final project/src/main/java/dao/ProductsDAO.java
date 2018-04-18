@@ -38,31 +38,4 @@ public class ProductsDAO {
         }
     }
 
-    public Products searchMovie(String i1, String i2) throws ProductsException {
-        Products movie = new Products();
-        try {
-            DAO.begin();
-
-            Session s = getSession();
-            System.out.println("inside DAO");
-            if (i1.equals("title")) {
-
-                Query q = s.createQuery("from  where title='" + i2 + "'");
-                List<Products> m = q.list();
-                movie = m.get(0);
-
-
-            }
-
-            DAO.commit();
-            DAO.close();
-
-
-        } catch (HibernateException e) {
-            DAO.rollback();
-            throw new ProductsException("Exception while creating user: " + e.getMessage());
-        }
-        return movie;
-    }
-
 }

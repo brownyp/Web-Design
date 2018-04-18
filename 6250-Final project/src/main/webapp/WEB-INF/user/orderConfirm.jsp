@@ -19,6 +19,9 @@
 <jsp:include page="/WEB-INF/else/header.jsp" />
 <form class="orderConForm" action="/testConfirm">
     <table>
+        <c:forEach var="i" begin="0" end="${productsNum.size()-1}">
+            <input type="hidden" name="productsNum" value="${productsNum.get(i)}">
+        </c:forEach>
         <tr><td>Name: <input name="username" id="username" type="text"></td></tr>
         <tr><td>Phone:<input name="userPhone" id="userPhone" type="text"></td></tr>
         <tr><td>Address:<input name="userAddress" id="userAddress" type="text"></td></tr>

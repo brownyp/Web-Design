@@ -52,11 +52,13 @@ public class UserController {
     public String ordernow(@RequestParam("chargeNum")String num, HttpServletRequest Request, Model model) throws ProductsException {
         List<String> productsNum = new ArrayList<>();
 
+        productsNum.add(Request.getParameter("amountInput0"));
         productsNum.add(Request.getParameter("amountInput1"));
         productsNum.add(Request.getParameter("amountInput2"));
         productsNum.add(Request.getParameter("amountInput3"));
         productsNum.add(Request.getParameter("amountInput4"));
-        productsNum.add(Request.getParameter("amountInput5"));
+
+        System.out.println(productsNum.size());
 
         model.addAttribute("productsNum",productsNum);
         return "user/orderConfirm";
@@ -67,8 +69,7 @@ public class UserController {
     public String orderConfim(HttpServletRequest Request,Model model) throws ProductsException {
         String[] a =Request.getParameterValues("productsNum");
         List<Products> allproducts =  productsDAO.getproduct();
-        System.out.println("a");
-        System.out.println(a[0]);
+
 
 
         return "user/index";
