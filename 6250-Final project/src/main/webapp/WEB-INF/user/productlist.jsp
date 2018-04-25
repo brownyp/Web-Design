@@ -29,7 +29,7 @@
 
             document.getElementById("chargeTotal").value=test;
             document.getElementById("chargeNum").value=test;
-            document.getElementById("chargeNum1").value=inputNum;
+            document.getElementById("orderNow1").disabled = false;
 
         }
 
@@ -63,13 +63,9 @@
         <input name="calname" type="button" value="update" onclick="cal()">
     </div>
     <input type="hidden" name="chargeNum" id="chargeNum" >
-    <input type="submit" id="ordernow1" value="Order Now">
+    <br>
+    <input type="submit" id="orderNow1" value="Order Now" disabled="true">
 </form>
-
-
-
-<button id="test1" type="button" onclick="">aaaa</button>
-
 
 <jsp:include page="/WEB-INF/else/footer.jsp" />
 </body>

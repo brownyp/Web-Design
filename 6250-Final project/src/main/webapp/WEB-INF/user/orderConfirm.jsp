@@ -19,17 +19,17 @@
 <jsp:include page="/WEB-INF/else/header.jsp" />
 <form class="orderConForm" action="/testConfirm">
     <table>
-        <c:forEach var="i" begin="0" end="${productsNum.size()-1}">
-            <input type="hidden" name="productsNum" value="${productsNum.get(i)}">
-        </c:forEach>
         <tr><td>Name: <input name="username" id="username" type="text"></td></tr>
         <tr><td>Phone:<input name="userPhone" id="userPhone" type="text"></td></tr>
         <tr><td>Address:<input name="userAddress" id="userAddress" type="text"></td></tr>
         <tr><td>E-mail:<input name="userEmail" id="userEmail" type="text"></td></tr>
     </table>
-    <input type="hidden" name="testProduct" value=${product}>
-    <input type="hidden" name="testProduct1" value=${productsNum}>
-
+    <input type="hidden" name="productnum" value="${productnum1}">
+    <input type="hidden" name="productnum" value="${productnum2}">
+    <input type="hidden" name="productnum" value="${productnum3}">
+    <input type="hidden" name="productnum" value="${productnum4}">
+    <input type="hidden" name="productnum" value="${productnum5}">
+    <input type="hidden" name="productPrice" value="${productPrice}">
     <input type="submit" value="Order Now">
 </form>
 <jsp:include page="/WEB-INF/else/footer.jsp" />

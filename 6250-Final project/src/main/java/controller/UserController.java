@@ -52,27 +52,79 @@ public class UserController {
     public String ordernow(@RequestParam("chargeNum")String num, HttpServletRequest Request, Model model) throws ProductsException {
         List<String> productsNum = new ArrayList<>();
 
-        productsNum.add(Request.getParameter("amountInput0"));
-        productsNum.add(Request.getParameter("amountInput1"));
-        productsNum.add(Request.getParameter("amountInput2"));
-        productsNum.add(Request.getParameter("amountInput3"));
-        productsNum.add(Request.getParameter("amountInput4"));
+        model.addAttribute("productnum1",Request.getParameter("amountInput0"));
+        model.addAttribute("productnum2",Request.getParameter("amountInput1"));
+        model.addAttribute("productnum3",Request.getParameter("amountInput2"));
+        model.addAttribute("productnum4",Request.getParameter("amountInput3"));
+        model.addAttribute("productnum5",Request.getParameter("amountInput4"));
+        model.addAttribute("productPrice",num);
 
-        System.out.println(productsNum.size());
-
-        model.addAttribute("productsNum",productsNum);
         return "user/orderConfirm";
     }
 
 
     @RequestMapping(value = "testConfirm",method = RequestMethod.GET)
     public String orderConfim(HttpServletRequest Request,Model model) throws ProductsException {
-        String[] a =Request.getParameterValues("productsNum");
+        String[] p1num =Request.getParameterValues("productnum");
+        ArrayList<Integer> p1Num = new ArrayList();
         List<Products> allproducts =  productsDAO.getproduct();
+        int k=0;
+
+        for(int i=0;i<p1num.length;i++){
+            if(p1num[i].isEmpty()==false){
+                p1Num.add(Integer.parseInt(p1num[i]));
+            }
+        }
+        for(int j =0;j<p1Num.size();j++){
+            k=k+p1Num.get(j);
+        }
+
+
+        String productPrice = Request.getParameter("productPrice");
+        String username = Request.getParameter("username");
+        String userPhone = Request.getParameter("userPhone");
+        String userAddress = Request.getParameter("userAddress");
+        String userEmail = Request.getParameter("userEmail");
+
+        Orders orders = new Orders();
+        Date date = new Date();
+        orders.setCustomerName(username);
+        orders.setCustomerPhone(userPhone);
+        orders.setCustomerAddress(userAddress);
+        orders.setCustomerEmail(userEmail);
+        orders.setOrderDate(date);
+        orders.setAmount(Integer.parseInt(productPrice));
+        orders.setOrderNum(k);
+
+
+        System.out.println(allproducts.size());
 
 
 
-        return "user/index";
+        ArrayList<OrderDetails> orderD = new ArrayList<>();
+
+        for(int i=0;i<p1num.length;i++){
+            if(p1num[i].isEmpty()==false){
+                OrderDetails orderDetails = new OrderDetails();
+                orderDetails.setOrders(orders);
+                orderDetails.setQuantity(Integer.parseInt(p1num[i]));
+                int pPrice = allproducts.get(i).getPrice();
+                orderDetails.setAmount(pPrice*Integer.parseInt(p1num[i]));
+                orderDetails.setProductName(allproducts.get(i).getName());
+                orderDetails.setPrice(allproducts.get(i).getPrice());
+                orderD.add(orderDetails);
+            }
+        }
+
+        orders.setOrderDetail(orderD);
+
+
+        HibernateUtil.save(orders);
+
+
+
+
+        return "user/ordersuccess";
     }
 
     @RequestMapping(value = "home",method = RequestMethod.GET)

@@ -25,7 +25,7 @@ public class Orders implements Serializable {
 
     private List<OrderDetails> orderDetail;
 
-    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="orders")
+    @OneToMany(mappedBy="orders")
     public List<OrderDetails> getOrderDetail() {
         return orderDetail;
     }
@@ -35,7 +35,7 @@ public class Orders implements Serializable {
     }
 
     @Id
-    @Column(name = "ID", nullable = false, length = 50)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId() {
         return id;
     }
