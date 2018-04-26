@@ -1,5 +1,6 @@
 package controller;
 
+import Interface.Imp.GetImgPath;
 import bean.Products;
 import dao.DAO;
 import exception.ProductsException;
@@ -99,7 +100,9 @@ public class AdminController {
         ClassLoader classLoader = getClass().getClassLoader();
         file.transferTo(new File(classLoader.getResource(".").getFile() + "/" + file.getOriginalFilename()));
         String test = file.getOriginalFilename();
-        productsDAO.updateProductImg(pro.getName(),test);
+        GetImgPath g = new GetImgPath();
+        String test1 = g.getImagesPath(test);
+        productsDAO.updateProductImg(pro.getName(),test1);
 
 
         return "admin/index"; }
