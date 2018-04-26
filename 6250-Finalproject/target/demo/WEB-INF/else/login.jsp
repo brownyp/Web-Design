@@ -12,7 +12,7 @@
 </head>
 <h1>Welcome To Second Hand Market</h1>
 <body>
-<h2>Only Manager Can login</h2>
+<h2>login Page</h2>
 <form name="loginform" method="post" action="j_security_check">
 
     <input name="j_username" type="text">

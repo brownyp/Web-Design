@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import dao.ProductsDAO;
@@ -130,7 +131,7 @@ public class AdminController {
     @RequestMapping(value = "searchProduct",method = RequestMethod.GET)
     public String searchProduct(HttpServletRequest request,Model model) throws ProductsException {
         String searchByName = request.getParameter("searchByName");
-        Products pro = productsDAO.searchProductImg(searchByName);
+        List<Products> pro = productsDAO.searchProductImg(searchByName);
         model.addAttribute("product",pro);
 
         return "admin/searchResult"; }

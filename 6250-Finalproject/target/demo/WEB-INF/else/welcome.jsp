@@ -9,7 +9,6 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="/WEB-INF/else/header.jsp" />
 </head>
 <body>
 <form action="/user">

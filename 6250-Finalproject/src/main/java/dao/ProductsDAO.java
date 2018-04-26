@@ -119,16 +119,15 @@ public class ProductsDAO {
         }
     }
 
-    public Products searchProductImg(String productName) throws ProductsException {
+    public List<Products> searchProductImg(String productName) throws ProductsException {
         try {
             Session s=getSession();
             DAO.begin();
             Query q = s.createQuery("from Products where name='" + productName + "'");
             List<Products> products = q.list();
-            Products pro = products.get(0);
             DAO.commit();
             DAO.close();
-            return pro;
+            return products;
 
         } catch (HibernateException e) {
             DAO.rollback();

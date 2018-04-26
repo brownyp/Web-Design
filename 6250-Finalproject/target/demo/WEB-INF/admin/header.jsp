@@ -21,9 +21,6 @@
                 <a class="header_a" href="manageProduct">Manage Product</a>
             </td>
             <td>
-                <a class="header_a" href="manageOrder">Manage Order</a>
-            </td>
-            <td>
                 <a class="header_a" href="createProduct">Create Product</a>
             </td>
             <td>

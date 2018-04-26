@@ -72,7 +72,7 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/WEB-INF/admin/login.jsp</form-login-page>
+            <form-login-page>/WEB-INF/else/login.jsp</form-login-page>
             <form-error-page>/WEB-INF/else/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
