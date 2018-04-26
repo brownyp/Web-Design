@@ -28,17 +28,7 @@ public class UserController {
 
     @RequestMapping(value = "/")
     public String index()
-    {
-
-        System.out.println("ss");
-        return "user/index";
-    }
-
-    @RequestMapping(value = "getproduct",method = RequestMethod.GET)
-    public String getproduct(Model model) throws ProductsException {
-
-       return "user/index";
-    }
+    { return "else/welcome"; }
 
     @RequestMapping(value = "productlist",method = RequestMethod.GET)
     public String getpage1(Model model) throws ProductsException {
@@ -120,12 +110,7 @@ public class UserController {
         }
 
         orders.setOrderDetail(orderD);
-
-
         HibernateUtil.save(orders);
-
-
-
 
         return "user/ordersuccess";
     }
@@ -147,7 +132,7 @@ public class UserController {
     @RequestMapping(value = "backtoUpage",method = RequestMethod.GET)
     public String backtoUpage()
     {
-        return "user/index";
+        return "else/welcome";
     }
 }
 

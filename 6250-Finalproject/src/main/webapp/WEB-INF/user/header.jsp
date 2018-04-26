@@ -13,5 +13,9 @@
           <a class="header_a" href="home">Home</a>
           <a class="header_a" href="productlist">Product List</a>
           <a class="header_a" href="Mycart">My Cart</a>
+          <a class="header_a" href="/logout">logout</a>
      </div >
+     <div class="header_right">
+     <form class="header_f" action="/admin" method="get"><input type="submit" value="login"></form>
+     </div>
 </div>

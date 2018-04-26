@@ -30,7 +30,7 @@
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>test</web-resource-name>
+            <web-resource-name>admin</web-resource-name>
             <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
 
@@ -44,6 +44,25 @@
 
     </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>user</web-resource-name>
+            <url-pattern>/user/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>administrator</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+
+    </security-constraint>
+
+    <security-role>
+        <role-name>administrator</role-name>
+    </security-role>
+
 
     <security-role>
         <role-name>registered-user</role-name>
@@ -54,7 +73,7 @@
         <auth-method>FORM</auth-method>
         <form-login-config>
             <form-login-page>/WEB-INF/admin/login.jsp</form-login-page>
-            <form-error-page>/WEB-INF/admin/error.jsp</form-error-page>
+            <form-error-page>/WEB-INF/else/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
 

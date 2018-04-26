@@ -16,7 +16,7 @@
 
 <body>
 <h1 class="welcome">Welcome To Second Hand Market</h1>
-<jsp:include page="/WEB-INF/else/header.jsp" />
+<jsp:include page="/WEB-INF/user/header.jsp" />
 <form class="orderConForm" action="/testConfirm">
     <table>
         <tr><td>Name: <input name="username" id="username" type="text"></td></tr>
@@ -32,6 +32,6 @@
     <input type="hidden" name="productPrice" value="${productPrice}">
     <input type="submit" value="Order Now">
 </form>
-<jsp:include page="/WEB-INF/else/footer.jsp" />
+<jsp:include page="/WEB-INF/user/footer.jsp" />
 </body>
 </html>

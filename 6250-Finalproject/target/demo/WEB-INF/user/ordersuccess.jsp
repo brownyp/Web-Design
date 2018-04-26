@@ -13,8 +13,8 @@
 </head>
 <body>
 <h1 class="welcome">Welcome To Second Hand Market</h1>
-<jsp:include page="/WEB-INF/else/header.jsp" />
+<jsp:include page="/WEB-INF/user/header.jsp" />
 <h1>Order Successful</h1>
-<jsp:include page="/WEB-INF/else/footer.jsp" />
+<jsp:include page="/WEB-INF/user/footer.jsp" />
 </body>
 </html>

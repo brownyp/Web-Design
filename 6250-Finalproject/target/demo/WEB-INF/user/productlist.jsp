@@ -38,7 +38,7 @@
 <body>
 <input type="hidden" id="productSize" value="${productSize}">
 <h1 class="welcome">Welcome To Second Hand Market</h1>
-<jsp:include page="/WEB-INF/else/header.jsp" />
+<jsp:include page="/WEB-INF/user/header.jsp" />
 <form action="/ordernow">
 <c:forEach var="i" begin="0" end="${product.size()-1}">
         <div class="product_container">
@@ -68,6 +68,6 @@
     <input type="submit" id="orderNow1" value="Order Now" disabled="true">
 </form>
 
-<jsp:include page="/WEB-INF/else/footer.jsp" />
+<jsp:include page="/WEB-INF/user/footer.jsp" />
 </body>
 </html>

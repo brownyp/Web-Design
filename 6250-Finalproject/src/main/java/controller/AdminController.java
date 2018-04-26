@@ -32,6 +32,9 @@ public class AdminController {
     @Autowired
     ProductsDAO productsDAO;
 
+    @RequestMapping(value = "/user")
+    public String gotoadmin()
+    { return "user/index"; }
 
     @RequestMapping(value = "/admin",method = RequestMethod.GET)
     public String loadadmin()
@@ -44,8 +47,10 @@ public class AdminController {
     {
         return "redirect:/admin/index";
     }
+
     @RequestMapping(value = "/admin/index",method = RequestMethod.POST)
     public String redirecttoP1() { return "admin/index"; }
+
     @RequestMapping(value = "manageProduct",method = RequestMethod.GET)
     public String manageProduct(Model model) throws ProductsException {
         List<Products> allproducts =  productsDAO.getproduct();
@@ -111,7 +116,7 @@ public class AdminController {
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.invalidate();
-        return "user/index"; }
+        return "else/welcome"; }
 
 
     @RequestMapping(value = "createProduct",method = RequestMethod.GET)
