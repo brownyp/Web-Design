@@ -22,7 +22,7 @@
         <div class="product_container">
             <table class="product_table">
                 <tr>
-                    <td><img class="product_img" src=${product.get(i).image}></td>
+                    <td><img class="product_img" src="http://localhost:8080/images/${product.get(i).image}"></td>
                 </tr>
                 <tr>
                     <td>Name:<input type="text" name="productNewName" value="${product.get(i).name}" id="price${i}"></td>

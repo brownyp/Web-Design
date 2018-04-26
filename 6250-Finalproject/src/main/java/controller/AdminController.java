@@ -59,7 +59,6 @@ public class AdminController {
         for(int i=0;i<allproducts.size();i++){
             if(allproducts.get(i).getName().equals(productName)){
                 delPro=allproducts.get(i);
-                System.out.println(i);
             }
         }
         productsDAO.deleteProduct(delPro);
@@ -99,7 +98,7 @@ public class AdminController {
         HibernateUtil.save(pro);
         ClassLoader classLoader = getClass().getClassLoader();
         file.transferTo(new File(classLoader.getResource(".").getFile() + "/" + file.getOriginalFilename()));
-        String test = classLoader.getResource(".").getFile() + file.getOriginalFilename();
+        String test = file.getOriginalFilename();
         productsDAO.updateProductImg(pro.getName(),test);
 
 
