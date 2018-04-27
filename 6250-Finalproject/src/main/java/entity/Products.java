@@ -1,9 +1,7 @@
-package bean;
+package entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 
 @Entity
 @Table(name = "products", schema = "shopping")

@@ -1,9 +1,8 @@
 package dao;
 
-import bean.Products;
+import entity.Products;
 import exception.ProductsException;
 import org.hibernate.*;
-import util.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,25 +19,6 @@ public class ProductsDAO {
             ArrayList<Products> allProducts = new ArrayList<>();
             Session s=getSession();
             DAO.begin();
-//            Query q = s.createQuery("FROM Products");
-//            List<Products> m = q.list();
-//            for(int i =0;i<m.size();i++){
-//                allProducts.add(m.get(i));
-//            }
-
-
-//            DAO.begin();
-//            Session s = HibernateUtil.getSession();
-//            Query q = s.createQuery("from Products where name='" + productName + "'");
-//            List<Products> products = q.list();
-//            Products p = new Products();
-//            p = products.get(0);
-//            p.setName(productNewName);
-//            p.setPrice(Integer.parseInt(productNewPrice));
-//            s.update(p);
-//            DAO.commit();
-//            DAO.close();
-//
             Criteria crit = s.createCriteria(Products.class);
             List<Products> results = crit.list();
             DAO.commit();

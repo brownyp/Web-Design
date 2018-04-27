@@ -1,7 +1,6 @@
-package bean;
+package entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "orderDetails", schema = "shopping")
@@ -11,25 +10,10 @@ public class OrderDetails {
     private double price;
     private int quantity;
     private String productName;
-
-
-//    private Products products;
-//
-//    @ManyToOne
-//    @JoinColumn(name="Product_id")//加入一列作为外键
-//    public Products getProducts() {
-//        return products;
-//    }
-//
-//    public void setProducts(Products products) {
-//        this.products = products;
-//    }
-
-
     private Orders orders;
 
-    @ManyToOne
-    @JoinColumn(name="Order_id")//加入一列作为外键
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="Order_id")
     public Orders getOrders() {
         return orders;
     }

@@ -1,12 +1,11 @@
 package controller;
 
-import bean.OrderDetails;
-import bean.Orders;
-import bean.Products;
+import entity.OrderDetails;
+import entity.Orders;
+import entity.Products;
 import dao.ProductsDAO;
 import exception.ProductsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,8 +89,6 @@ public class UserController {
         orders.setOrderNum(k);
 
 
-        System.out.println(allproducts.size());
-
 
 
         ArrayList<OrderDetails> orderD = new ArrayList<>();
@@ -110,6 +107,8 @@ public class UserController {
         }
 
         orders.setOrderDetail(orderD);
+        System.out.println(orders.getOrderDetail().get(0).getAmount());
+        System.out.println(orders.getOrderDetail().get(0).getProductName());
         HibernateUtil.save(orders);
 
         return "user/ordersuccess";

@@ -32,7 +32,7 @@ public class SqlFilter implements Filter {
                 sql = sql + value[i];
             }
         }
-        System.out.println("被匹配字符串：" + sql);
+        System.out.println("Matched String：" + sql);
         if (sqlValidate(sql)) {
             res.sendRedirect("else/sqlerror.jsp");
         } else {
@@ -51,7 +51,7 @@ public class SqlFilter implements Filter {
         String[] badStrs = badStr.split("\\|");
         for (int i = 0; i < badStrs.length; i++) {
             if (str.indexOf(badStrs[i]) != -1) {
-                System.out.println("匹配到：" + badStrs[i]);
+                System.out.println("Matched：" + badStrs[i]);
                 return true;
             }
         }

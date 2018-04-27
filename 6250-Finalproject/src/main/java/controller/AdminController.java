@@ -1,12 +1,8 @@
 package controller;
 
 import Interface.Imp.GetImgPath;
-import bean.Products;
-import dao.DAO;
+import entity.Products;
 import exception.ProductsException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +16,6 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import dao.ProductsDAO;
 import org.springframework.web.multipart.MultipartFile;

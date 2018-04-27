@@ -1,6 +1,6 @@
 package initialize;
 
-import bean.Products;
+import entity.Products;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 import util.HibernateUtil;
@@ -16,7 +16,7 @@ public class Initialize implements InitializingBean {
         p1.setPrice(1999);
         p1.setImage("http://localhost:8080/images/1.jpg");
         HibernateUtil.save(p1);
-        System.out.println("ok");
+
         Products p2 = new Products();
         p2.setName("Supreme2");
         p2.setPrice(2999);

@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: yupei
+  User: Qingchun Xia
   Date: 2018/3/24
   Time: 下午5:44
   To change this template use File | Settings | File Templates.
@@ -19,7 +19,7 @@
 
     <input name="j_password" type="password">
 
-    <input type="submit" value="登 录" >
+    <input type="submit" value="login" >
 
 </form>
 <a href="backtoUpage">back</a>

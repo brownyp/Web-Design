@@ -1,6 +1,5 @@
-package bean;
+package entity;
 
-import javax.lang.model.type.ArrayType;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class Orders implements Serializable {
 
     private List<OrderDetails> orderDetail;
 
-    @OneToMany(mappedBy="orders")
+    @OneToMany(mappedBy="orders",cascade = CascadeType.ALL)
     public List<OrderDetails> getOrderDetail() {
         return orderDetail;
     }

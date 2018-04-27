@@ -13,8 +13,8 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping class="bean.OrderDetails"/>
-        <mapping class="bean.Products"/>
-        <mapping class="bean.Orders"/>
+        <mapping class="entity.OrderDetails"/>
+        <mapping class="entity.Products"/>
+        <mapping class="entity.Orders"/>
     </session-factory>
 </hibernate-configuration>
