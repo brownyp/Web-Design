@@ -16,7 +16,7 @@ public class ProductsDAO {
 
     public List<Products> getproduct() throws ProductsException {
         try {
-            ArrayList<Products> allProducts = new ArrayList<>();
+//            ArrayList<Products> allProducts = new ArrayList<>();
             Session s=getSession();
             DAO.begin();
             Criteria crit = s.createCriteria(Products.class);

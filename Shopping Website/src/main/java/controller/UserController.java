@@ -33,6 +33,7 @@ public class UserController {
     public String getpage1(Model model) throws ProductsException {
         List<Products> allproducts =  productsDAO.getproduct();
         int productSize = allproducts.size();
+        System.out.println(productSize);
         model.addAttribute("product",allproducts);
         model.addAttribute("productSize",productSize);
 
